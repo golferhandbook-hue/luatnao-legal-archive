@@ -20,3 +20,85 @@ Chào mừng bạn đến với kho kiến thức pháp luật tự động đư
 
 ### 🌐 Trang Chủ Chính Thức / Official Website
 Tra cứu pháp luật & Tư vấn AI thời gian thực: [https://luatnao.vn](https://luatnao.vn)
+
+---
+
+<!-- 📊 헤더 방문자 카운터 뱃지 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  .visitor-badge-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 18px;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 30px;
+    margin-top: 24px;
+    font-size: 0.875rem;
+    color: #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  .v-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .v-sep {
+    color: rgba(255, 255, 255, 0.2);
+  }
+  :root {
+    --primary-cyan: #06b6d4;
+    --primary-blue: #3b82f6;
+  }
+</style>
+
+<div class="visitor-badge-group">
+  <div class="v-item">
+    <i class="fa-solid fa-user-check" style="color: var(--primary-cyan);"></i>
+    <span>오늘 방문: <strong id="todayCount">-</strong>명</span>
+  </div>
+  <span class="v-sep">|</span>
+  <div class="v-item">
+    <i class="fa-solid fa-chart-pie" style="color: var(--primary-blue);"></i>
+    <span>누적 방문: <strong id="totalCount">-</strong>명</span>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const todayStr = new Date().toISOString().slice(0, 10);
+    const lastVisitKey = 'ln_last_visit_date';
+    const todayCountKey = 'ln_today_count';
+    const totalCountKey = 'ln_total_count';
+
+    let localToday = parseInt(localStorage.getItem(todayCountKey) || '1', 10);
+    let localTotal = parseInt(localStorage.getItem(totalCountKey) || '128', 10);
+    const lastVisitDate = localStorage.getItem(lastVisitKey);
+
+    if (lastVisitDate !== todayStr) {
+      localToday = 1;
+      localTotal += 1;
+      localStorage.setItem(lastVisitKey, todayStr);
+    } else {
+      localToday += 1;
+      localTotal += 1;
+    }
+
+    localStorage.setItem(todayCountKey, localToday.toString());
+    localStorage.setItem(totalCountKey, localTotal.toString());
+
+    document.getElementById('todayCount').innerText = localToday.toLocaleString();
+    document.getElementById('totalCount').innerText = localTotal.toLocaleString();
+
+    // 📡 CounterAPI 실시간 동기화
+    fetch('https://api.counterapi.dev/v1/luatnao-legal-archive/total/up')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.count) {
+          document.getElementById('totalCount').innerText = data.count.toLocaleString();
+        }
+      }).catch(e => console.log('CounterAPI Sync:', e));
+  })();
+</script>
