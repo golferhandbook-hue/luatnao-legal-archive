@@ -1,0 +1,7 @@
+title: "⚖️ LuatNao Legal Intelligence"
+description: "베트남 도로교통법, 노동법, 투자법 AI 검증 지식 아카이브 및 법률 가이드"
+theme: jekyll-theme-cayman
+google_analytics: ""
+show_downloads: false
+plugins:
+  - jekyll-seo-tag
