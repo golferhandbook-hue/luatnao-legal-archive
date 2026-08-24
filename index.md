@@ -1,48 +1,77 @@
 ---
 layout: default
 title: "Kho Kiến Thức & Hỏi Đáp Pháp Luật Việt Nam - LuatNao.vn"
-description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam thời gian thực. Được hỗ trợ bởi AI LuatNao.vn"
+description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam thời gian thực. Hệ thống AI phân tích và đối chiếu đa tầng Nghị định, Thông tư hiện hành."
 ---
 
 <!-- ── 상단 커스텀 스타일 ── -->
 <style>
   :root {
     --brand-primary: #2563eb;
+    --brand-dark: #0f172a;
     --brand-gradient: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
     --card-bg: #ffffff;
     --card-border: #e2e8f0;
     --text-main: #0f172a;
     --text-muted: #64748b;
-    --accent-badge: #eff6ff;
-    --accent-badge-text: #1d4ed8;
   }
 
-  /* 글로벌 네비게이션 */
+  /* 글로벌 네비게이션 헤더 */
   .archive-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 12px;
-    padding: 12px 18px;
+    gap: 14px;
+    padding: 14px 20px;
     background: #0f172a;
-    border-radius: 12px;
+    border-radius: 14px;
     margin-bottom: 24px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .archive-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .archive-brand-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+  }
+  .archive-brand-text {
+    font-size: 16px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+  }
+  .archive-brand-badge {
+    font-size: 10px;
+    font-weight: 700;
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
   }
   .archive-nav-links {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     flex-wrap: wrap;
   }
   .archive-nav-link {
-    color: #cbd5e1;
+    color: #94a3b8;
     text-decoration: none;
     font-size: 13.5px;
     font-weight: 600;
     padding: 6px 12px;
-    border-radius: 6px;
+    border-radius: 8px;
     transition: all 0.2s;
   }
   .archive-nav-link:hover, .archive-nav-link.active {
@@ -53,19 +82,19 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
     color: #ffffff !important;
     text-decoration: none;
     font-size: 13px;
     font-weight: 700;
     padding: 8px 16px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 2px 10px rgba(37, 99, 235, 0.4);
     transition: all 0.2s;
   }
   .btn-launch-ai:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.6);
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.6);
   }
 
   /* 검색 및 필터 구획 */
@@ -84,7 +113,7 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
   .search-input-wrap input {
     width: 100%;
     box-sizing: border-box;
-    padding: 12px 16px 12px 42px;
+    padding: 13px 16px 13px 44px;
     font-size: 15px;
     border: 2px solid #cbd5e1;
     border-radius: 10px;
@@ -92,15 +121,15 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
     transition: border-color 0.2s;
   }
   .search-input-wrap input:focus {
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
   }
   .search-icon {
     position: absolute;
     left: 14px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 17px;
+    font-size: 18px;
     color: #94a3b8;
   }
   .filter-chips {
@@ -123,7 +152,7 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
   }
   .filter-chip:hover {
     background: #e2e8f0;
-    color: #1e293b;
+    color: #0f172a;
   }
   .filter-chip.active {
     background: #2563eb;
@@ -131,12 +160,14 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
     color: #ffffff;
   }
   .search-count-bar {
-    margin-top: 10px;
+    margin-top: 12px;
     font-size: 12.5px;
     color: #64748b;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   /* 카드 그리드 */
@@ -144,6 +175,7 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 18px;
+    margin-bottom: 40px;
   }
   .post-card {
     background: #ffffff;
@@ -236,6 +268,32 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
   .post-card-link:hover {
     text-decoration: underline;
   }
+
+  /* 하단 푸터 & 방문자 카운터 */
+  .archive-footer {
+    margin-top: 48px;
+    padding: 28px 20px;
+    background: #0f172a;
+    border-radius: 14px;
+    color: #94a3b8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .visitor-counter-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 16px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
   .no-results-box {
     grid-column: 1 / -1;
     text-align: center;
@@ -247,20 +305,27 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
   }
 </style>
 
-<!-- ── 상단 네비게이션 바 (GNB) ── -->
+<!-- ── 1. 상단 글로벌 네비게이션 헤더 (공식 로고 탑재) ── -->
 <nav class="archive-nav">
+  <a href="https://luatnao-alt.github.io/" class="archive-brand">
+    <img src="assets/images/logo.png" alt="LuatNao.vn Logo" class="archive-brand-logo" onerror="this.src='https://luatnao.vn/luatnao/favicon.png'" />
+    <span class="archive-brand-text">LuatNao.vn</span>
+    <span class="archive-brand-badge">Archive</span>
+  </a>
+
   <div class="archive-nav-links">
     <a href="#" class="archive-nav-link active" onclick="setCategoryFilter('all', this); return false;">🏠 Tất cả (전체)</a>
     <a href="#" class="archive-nav-link" onclick="setCategoryFilter('giao-thong', this); return false;">🚗 Giao thông (교통)</a>
     <a href="#" class="archive-nav-link" onclick="setCategoryFilter('lao-dong', this); return false;">💼 Lao động (노동)</a>
     <a href="#" class="archive-nav-link" onclick="setCategoryFilter('bat-dong-san', this); return false;">🏢 Bất động sản (부동산)</a>
   </div>
+
   <a href="https://luatnao.vn" target="_blank" rel="noopener" class="btn-launch-ai">
     ⚡ LuatNao AI Trực Tuyến →
   </a>
 </nav>
 
-<!-- ── 상단 검색 및 퀵 태그 필터 바 ── -->
+<!-- ── 2. 상단 검색 및 퀵 태그 필터 바 ── -->
 <div class="search-section">
   <div class="search-input-wrap">
     <span class="search-icon">🔍</span>
@@ -283,7 +348,7 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
   </div>
 </div>
 
-<!-- ── 법률 Q&A 카드 그리드 ── -->
+<!-- ── 3. 법률 Q&A 카드 그리드 ── -->
 <div class="posts-grid" id="postsGrid">
 {% for post in site.posts %}
   <article class="post-card" 
@@ -333,7 +398,29 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
   </div>
 </div>
 
-<!-- ── 순수 바닐라 JS 실시간 클라이언트 검색 엔진 (0.001s) ── -->
+<!-- ── 4. 하단 푸터 & 실시간 방문자 카운터 (Visitor Counter) ── -->
+<footer class="archive-footer">
+  <div style="display: flex; align-items: center; gap: 8px;">
+    <img src="assets/images/logo.png" alt="LuatNao.vn" style="width: 24px; height: 24px; object-fit: contain;" onerror="this.src='https://luatnao.vn/luatnao/favicon.png'" />
+    <strong style="color: #ffffff; font-size: 15px;">LuatNao.vn Legal Intelligence</strong>
+  </div>
+
+  <p style="margin: 0; font-size: 12.5px; max-width: 540px; line-height: 1.6;">
+    Hệ thống lưu trữ và tra cứu kiến thức pháp luật Việt Nam tự động hóa. Cập nhật liên tục theo các Nghị định, Thông tư mới nhất.
+  </p>
+
+  <!-- 실시간 방문자 카운터 위젯 배지 -->
+  <div class="visitor-counter-bar">
+    <span style="font-size: 12px; color: #cbd5e1; font-weight: 600;">📊 LuatNao Visitors:</span>
+    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fluatnao-alt.github.io&count_bg=%232563EB&title_bg=%231E293B&icon=&icon_color=%23E7E7E7&title=Total+Views&edge_flat=false" alt="Total Pageviews" style="vertical-align: middle;" />
+  </div>
+
+  <div style="font-size: 11.5px; color: #64748b; margin-top: 6px;">
+    © 2026 <strong><a href="https://luatnao.vn" target="_blank" rel="noopener" style="color: #60a5fa; text-decoration: none;">LuatNao.vn</a></strong>. All rights reserved. Powered by GitHub Pages & Legal AI.
+  </div>
+</footer>
+
+<!-- ── 실시간 클라이언트 검색 스크립트 ── -->
 <script>
   let currentCategory = 'all';
   let currentTag = 'all';
