@@ -308,7 +308,7 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
 <!-- ── 1. 상단 글로벌 네비게이션 헤더 (공식 로고 탑재) ── -->
 <nav class="archive-nav">
   <a href="https://luatnao-alt.github.io/" class="archive-brand">
-    <img src="assets/images/logo.png" alt="LuatNao.vn Logo" class="archive-brand-logo" onerror="this.src='https://luatnao.vn/luatnao/favicon.png'" />
+    <img src="{{ '/assets/images/logo.png' | relative_url }}?v=1787577364474" alt="LuatNao.vn Logo" class="archive-brand-logo" />
     <span class="archive-brand-text">LuatNao.vn</span>
     <span class="archive-brand-badge">Archive</span>
   </a>
@@ -401,7 +401,7 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
 <!-- ── 4. 하단 푸터 & 실시간 방문자 카운터 (Visitor Counter) ── -->
 <footer class="archive-footer">
   <div style="display: flex; align-items: center; gap: 8px;">
-    <img src="assets/images/logo.png" alt="LuatNao.vn" style="width: 24px; height: 24px; object-fit: contain;" onerror="this.src='https://luatnao.vn/luatnao/favicon.png'" />
+    <img src="{{ '/assets/images/logo.png' | relative_url }}?v=1787577364474" alt="LuatNao.vn" style="width: 24px; height: 24px; object-fit: contain;" />
     <strong style="color: #ffffff; font-size: 15px;">LuatNao.vn Legal Intelligence</strong>
   </div>
 
