@@ -1,11 +1,27 @@
-title: "⚖️ LuatNao Legal Intelligence"
-description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam thời gian thực - Luật giao thông, lao động, đầu tư & doanh nghiệp FDI."
-lang: "vi"
-theme: jekyll-theme-cayman
+title: "Kho Kiến Thức & Hỏi Đáp Pháp Luật Việt Nam - LuatNao.vn"
+description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam thời gian thực. Hệ thống tự động phân tích & đối chiếu đa tầng các Nghị định, Thông tư và quy định hiện hành."
 url: "https://luatnao-alt.github.io"
-baseurl: "/luatnao-legal-archive"
-google_analytics: ""
-show_downloads: false
+baseurl: ""
+
+# Jekyll SEO & Sitemap 플러그인
 plugins:
-  - jekyll-seo-tag
+  - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
+
+# 마크다운 렌더러 설정
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# 영구 링크 구조 (SEO 최적화 YYYY/MM/DD/slug)
+permalink: /:year/:month/:day/:title/
+
+# 소셜 메타데이터 (Google / Facebook OpenGraph / Twitter Cards)
+author: "LuatNao Legal Intelligence AI"
+locale: "vi_VN"
+social:
+  name: "LuatNao.vn"
+  links:
+    - "https://luatnao.vn"
