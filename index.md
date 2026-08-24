@@ -411,8 +411,9 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
 
   <!-- 실시간 방문자 카운터 위젯 배지 -->
   <div class="visitor-counter-bar">
-    <span style="font-size: 12px; color: #cbd5e1; font-weight: 600;">📊 LuatNao Visitors:</span>
-    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fluatnao-alt.github.io&count_bg=%232563EB&title_bg=%231E293B&icon=&icon_color=%23E7E7E7&title=Total+Views&edge_flat=false" alt="Total Pageviews" style="vertical-align: middle;" />
+    <span style="font-size: 12.5px; color: #cbd5e1; font-weight: 700;">📊 LuatNao Views:</span>
+    <img src="https://komarev.com/ghpvc/?username=luatnao-alt&label=TOTAL+VIEWS&color=2563eb&style=flat-square" alt="Total Pageviews" style="vertical-align: middle; border-radius: 4px;" />
+    <img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fluatnao-alt.github.io&label=VISITORS&labelColor=%230f172a&countColor=%232563eb&style=flat-square" alt="Live Visitors" style="vertical-align: middle; border-radius: 4px;" />
   </div>
 
   <div style="font-size: 11.5px; color: #64748b; margin-top: 6px;">
