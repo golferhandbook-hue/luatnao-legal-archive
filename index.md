@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Kho Kiến Thức & Hỏi Đáp Pháp Luật Việt Nam - LuatNao.vn"
+title: "Kho Kiến Thức & Kho Kiến Thức & Tra Cứu Tri Thức Pháp Luật Việt Nam - LuatNao.vn"
 description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam thời gian thực. Hệ thống AI phân tích và đối chiếu đa tầng Nghị định, Thông tư hiện hành."
 ---
 
@@ -321,7 +321,7 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
   </div>
 
   <a href="https://luatnao.vn" target="_blank" rel="noopener" class="btn-launch-ai">
-    ⚡ LuatNao AI Trực Tuyến →
+    ⚡ Tra Cứu Tri Thức LuatNao →
   </a>
 </nav>
 
@@ -382,7 +382,7 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
 
     <div class="post-card-footer">
       <a href="{{ post.url | relative_url }}" class="post-card-link">Đọc chi tiết bài viết →</a>
-      <a href="https://luatnao.vn" target="_blank" rel="noopener" style="font-size: 11.5px; color: #64748b; text-decoration: none;">💬 Hỏi AI thêm</a>
+      <a href="https://luatnao.vn" target="_blank" rel="noopener" style="font-size: 11.5px; color: #64748b; text-decoration: none;">🔍 Tra Cứu Thêm</a>
     </div>
   </article>
 {% endfor %}
@@ -391,9 +391,9 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
   <div class="no-results-box" id="noResultsBox">
     <div style="font-size: 32px; margin-bottom: 8px;">🔍</div>
     <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 16px;">Không tìm thấy bài viết phù hợp</h4>
-    <p style="margin: 0 0 16px 0; color: #64748b; font-size: 13px;">일치하는 Q&A 게시글이 없습니다. LuatNao.vn에서 새로운 법률 질문을 해보세요!</p>
+    <p style="margin: 0 0 16px 0; color: #64748b; font-size: 13px;">일치하는 Q&A 게시글이 없습니다. LuatNao.vn에서 LuatNao.vn에서 최신 법령 조항을 검색해 보세요!</p>
     <a href="https://luatnao.vn" target="_blank" rel="noopener" class="btn-launch-ai" style="display: inline-flex;">
-      ⚡ Hỏi LuatNao AI ngay
+      ⚡ Tra Cứu Tại LuatNao.vn
     </a>
   </div>
 </div>
