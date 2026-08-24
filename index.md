@@ -1,67 +1,389 @@
 ---
 layout: default
 title: "Kho Kiến Thức & Hỏi Đáp Pháp Luật Việt Nam - LuatNao.vn"
+description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam thời gian thực. Được hỗ trợ bởi AI LuatNao.vn"
 ---
 
-<div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #ffffff; padding: 28px 24px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1);">
-  <h2 style="margin-top: 0; color: #38bdf8; font-size: 1.6rem; display: flex; align-items: center; gap: 8px;">
-    ⚖️ LuatNao Legal Intelligence AI
-  </h2>
-  <p style="font-size: 1.05rem; line-height: 1.6; color: #cbd5e1; margin-bottom: 18px;">
-    Hệ thống lưu trữ và tra cứu kiến thức pháp luật Việt Nam thời gian thực. Được hỗ trợ bởi trí tuệ nhân tạo (AI) phân tích và đối chiếu đa tầng các Nghị định, Thông tư, mức xử phạt và quy định hiện hành.
-  </p>
-  <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-    <a href="https://luatnao.vn" style="display: inline-flex; align-items: center; background: #0284c7; color: #ffffff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4);">
-      🚀 Tra cứu & Tư vấn AI trực tuyến miễn phí tại LuatNao.vn →
+<!-- ── 상단 커스텀 스타일 ── -->
+<style>
+  :root {
+    --brand-primary: #2563eb;
+    --brand-gradient: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    --card-bg: #ffffff;
+    --card-border: #e2e8f0;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --accent-badge: #eff6ff;
+    --accent-badge-text: #1d4ed8;
+  }
+
+  /* 글로벌 네비게이션 */
+  .archive-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 18px;
+    background: #0f172a;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  }
+  .archive-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .archive-nav-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+  .archive-nav-link:hover, .archive-nav-link.active {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+  }
+  .btn-launch-ai {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(59, 130, 246, 0.4);
+    transition: all 0.2s;
+  }
+  .btn-launch-ai:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.6);
+  }
+
+  /* 검색 및 필터 구획 */
+  .search-section {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.05);
+  }
+  .search-input-wrap {
+    position: relative;
+    margin-bottom: 14px;
+  }
+  .search-input-wrap input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 16px 12px 42px;
+    font-size: 15px;
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-input-wrap input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  }
+  .search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 17px;
+    color: #94a3b8;
+  }
+  .filter-chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .filter-chip {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;
+  }
+  .filter-chip:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+  }
+  .filter-chip.active {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+  }
+  .search-count-bar {
+    margin-top: 10px;
+    font-size: 12.5px;
+    color: #64748b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* 카드 그리드 */
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 18px;
+  }
+  .post-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+  .post-card:hover {
+    transform: translateY(-3px);
+    border-color: #93c5fd;
+    box-shadow: 0 10px 24px -4px rgba(37, 99, 235, 0.12);
+  }
+  .post-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .post-category-badge {
+    background: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+  }
+  .post-date {
+    font-size: 12px;
+    color: #94a3b8;
+  }
+  .post-card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.45;
+    margin-bottom: 8px;
+  }
+  .post-card-title a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .post-card-title a:hover {
+    color: #2563eb;
+  }
+  .post-card-desc {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.55;
+    margin-bottom: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .post-card-tags {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  .post-tag {
+    font-size: 10.5px;
+    color: #64748b;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .post-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 10px;
+    margin-top: auto;
+  }
+  .post-card-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: #2563eb;
+    text-decoration: none;
+  }
+  .post-card-link:hover {
+    text-decoration: underline;
+  }
+  .no-results-box {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 48px 20px;
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 12px;
+    display: none;
+  }
+</style>
+
+<!-- ── 상단 네비게이션 바 (GNB) ── -->
+<nav class="archive-nav">
+  <div class="archive-nav-links">
+    <a href="#" class="archive-nav-link active" onclick="setCategoryFilter('all', this); return false;">🏠 Tất cả (전체)</a>
+    <a href="#" class="archive-nav-link" onclick="setCategoryFilter('giao-thong', this); return false;">🚗 Giao thông (교통)</a>
+    <a href="#" class="archive-nav-link" onclick="setCategoryFilter('lao-dong', this); return false;">💼 Lao động (노동)</a>
+    <a href="#" class="archive-nav-link" onclick="setCategoryFilter('bat-dong-san', this); return false;">🏢 Bất động sản (부동산)</a>
+  </div>
+  <a href="https://luatnao.vn" target="_blank" rel="noopener" class="btn-launch-ai">
+    ⚡ LuatNao AI Trực Tuyến →
+  </a>
+</nav>
+
+<!-- ── 상단 검색 및 퀵 태그 필터 바 ── -->
+<div class="search-section">
+  <div class="search-input-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="liveSearchInput" placeholder="Tìm kiếm theo từ khóa, mức phạt, điều luật, câu hỏi... / 키워드, 벌금, 질문 검색..." oninput="handleLiveSearch()" />
+  </div>
+
+  <div class="filter-chips">
+    <span style="font-size: 12px; font-weight: 700; color: #475569; margin-right: 4px;">🏷️ Lọc nhanh:</span>
+    <span class="filter-chip active" onclick="setTagFilter('all', this)">Tất cả (전체)</span>
+    <span class="filter-chip" onclick="setTagFilter('phap-luat-viet-nam', this)">#PhápLuậtVN</span>
+    <span class="filter-chip" onclick="setTagFilter('traffic', this)">#GiaoThông</span>
+    <span class="filter-chip" onclick="setTagFilter('speed-fine', this)">#MứcPhạtQuáTốcĐộ</span>
+    <span class="filter-chip" onclick="setTagFilter('demerit-points', this)">#ĐiểmTrừGPLX</span>
+    <span class="filter-chip" onclick="setTagFilter('lao-dong', this)">#HợpĐồngLaoĐộng</span>
+  </div>
+
+  <div class="search-count-bar">
+    <span id="searchResultCount">Hiển thị tất cả bài viết</span>
+    <span>⚡ Cập nhật tự động thời gian thực từ LuatNao AI</span>
+  </div>
+</div>
+
+<!-- ── 법률 Q&A 카드 그리드 ── -->
+<div class="posts-grid" id="postsGrid">
+{% for post in site.posts %}
+  <article class="post-card" 
+    data-title="{{ post.title | downcase | escape }}"
+    data-desc="{{ post.description | default: post.excerpt | strip_html | downcase | escape }}"
+    data-categories="{{ post.categories | join: ' ' | downcase }}"
+    data-tags="{{ post.tags | join: ' ' | downcase }}"
+  >
+    <div>
+      <div class="post-card-meta">
+        <span class="post-category-badge">{{ post.categories | first | default: "Legal-QA" }}</span>
+        <span class="post-date">📅 {{ post.date | date: "%Y-%m-%d" }}</span>
+      </div>
+
+      <h3 class="post-card-title">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h3>
+
+      <div class="post-card-desc">
+        {{ post.description | default: post.excerpt | strip_html | truncate: 120 }}
+      </div>
+
+      {% if post.tags.size > 0 %}
+        <div class="post-card-tags">
+          {% for tag in post.tags limit:4 %}
+            <span class="post-tag">#{{ tag }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="post-card-footer">
+      <a href="{{ post.url | relative_url }}" class="post-card-link">Đọc chi tiết bài viết →</a>
+      <a href="https://luatnao.vn" target="_blank" rel="noopener" style="font-size: 11.5px; color: #64748b; text-decoration: none;">💬 Hỏi AI thêm</a>
+    </div>
+  </article>
+{% endfor %}
+
+  <!-- 검색 결과 없음 안내 -->
+  <div class="no-results-box" id="noResultsBox">
+    <div style="font-size: 32px; margin-bottom: 8px;">🔍</div>
+    <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 16px;">Không tìm thấy bài viết phù hợp</h4>
+    <p style="margin: 0 0 16px 0; color: #64748b; font-size: 13px;">일치하는 Q&A 게시글이 없습니다. LuatNao.vn에서 새로운 법률 질문을 해보세요!</p>
+    <a href="https://luatnao.vn" target="_blank" rel="noopener" class="btn-launch-ai" style="display: inline-flex;">
+      ⚡ Hỏi LuatNao AI ngay
     </a>
   </div>
 </div>
 
-## 📚 Danh Mục Hỏi Đáp Pháp Luật Mới Nhất / 최근 법률 가이드 & Q&A
+<!-- ── 순수 바닐라 JS 실시간 클라이언트 검색 엔진 (0.001s) ── -->
+<script>
+  let currentCategory = 'all';
+  let currentTag = 'all';
 
-{% if site.posts.size > 0 %}
-<div style="display: grid; gap: 16px; margin-top: 20px;">
-{% for post in site.posts limit:50 %}
-  <div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 18px 20px; background: #ffffff; box-shadow: 0 2px 6px rgba(0,0,0,0.04); transition: transform 0.2s ease;">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-      <span style="font-size: 0.8rem; background: #e0f2fe; color: #0369a1; padding: 3px 8px; border-radius: 4px; font-weight: 600;">
-        {{ post.categories | join: ', ' | default: 'Pháp Luật' }}
-      </span>
-      <span style="font-size: 0.8rem; color: #64748b;">
-        📅 {{ post.date | date: "%Y-%m-%d" }}
-      </span>
-    </div>
-    <h3 style="margin: 0 0 10px 0; font-size: 1.2rem;">
-      <a href="{{ post.url | relative_url }}" style="color: #0f172a; text-decoration: none; font-weight: 700;">
-        {{ post.title }}
-      </a>
-    </h3>
-    <p style="margin: 0; color: #475569; font-size: 0.95rem; line-height: 1.5;">
-      {{ post.description | default: post.excerpt | strip_html | truncatewords: 30 }}
-    </p>
-    <div style="margin-top: 12px; display: flex; justify-content: space-between; align-items: center;">
-      <a href="{{ post.url | relative_url }}" style="color: #0284c7; font-size: 0.9rem; font-weight: 600; text-decoration: none;">
-        Đọc chi tiết bài viết →
-      </a>
-      <a href="https://luatnao.vn" style="color: #64748b; font-size: 0.85rem; text-decoration: none;">
-        ⚖️ Hỏi AI vụ việc này
-      </a>
-    </div>
-  </div>
-{% endfor %}
-</div>
-{% else %}
-<p style="color: #64748b; font-style: italic;">
-  Hiện tại chưa có bài viết nào được đăng tải. Các bài viết hỏi đáp pháp luật sẽ tự động hiển thị tại đây khi hệ thống cập nhật.
-</p>
-{% endif %}
+  function handleLiveSearch() {
+    const query = (document.getElementById('liveSearchInput').value || '').toLowerCase().trim();
+    const cards = document.querySelectorAll('.post-card');
+    let visibleCount = 0;
 
----
+    cards.forEach(card => {
+      const title = card.getAttribute('data-title') || '';
+      const desc = card.getAttribute('data-desc') || '';
+      const categories = card.getAttribute('data-categories') || '';
+      const tags = card.getAttribute('data-tags') || '';
 
-## 🏷️ Các Chủ Đề Quan Tâm / 주요 법률 분야
-* 🚗 **Giao Thông Đường Bộ**: Mức phạt vi phạm tốc độ, nồng độ cồn, trừ điểm GPLX theo quy định mới nhất.
-* 💼 **Lao Động & Tiền Lương**: Hợp đồng lao động, chấm dứt HĐLĐ, trợ cấp thôi việc, bảo hiểm xã hội.
-* 🏢 **Đầu Tư FDI & Doanh Nghiệp**: Thành lập công ty vốn nước ngoài, thay đổi giấy phép, thuế doanh nghiệp.
+      const matchesQuery = !query || title.includes(query) || desc.includes(query) || tags.includes(query);
+      const matchesCategory = currentCategory === 'all' || categories.includes(currentCategory) || tags.includes(currentCategory) || title.includes(currentCategory);
+      const matchesTag = currentTag === 'all' || tags.includes(currentTag) || categories.includes(currentTag);
 
----
-*(Kho kiến thức pháp luật được tự động cập nhật bởi [LuatNao.vn](https://luatnao.vn) AI Engine)*
+      if (matchesQuery && matchesCategory && matchesTag) {
+        card.style.display = 'flex';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    const noResults = document.getElementById('noResultsBox');
+    const countBar = document.getElementById('searchResultCount');
+
+    if (visibleCount === 0) {
+      if (noResults) noResults.style.display = 'block';
+      if (countBar) countBar.innerText = 'Không có kết quả nào (검색 결과 없음)';
+    } else {
+      if (noResults) noResults.style.display = 'none';
+      if (countBar) countBar.innerText = 'Hiển thị ' + visibleCount + ' / ' + cards.length + ' bài viết (' + visibleCount + '개 표시 중)';
+    }
+  }
+
+  function setCategoryFilter(cat, elem) {
+    currentCategory = cat;
+    document.querySelectorAll('.archive-nav-link').forEach(el => el.classList.remove('active'));
+    if (elem) elem.classList.add('active');
+    handleLiveSearch();
+  }
+
+  function setTagFilter(tag, elem) {
+    currentTag = tag;
+    document.querySelectorAll('.filter-chip').forEach(el => el.classList.remove('active'));
+    if (elem) elem.classList.add('active');
+    handleLiveSearch();
+  }
+</script>
