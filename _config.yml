@@ -1,7 +1,11 @@
 title: "⚖️ LuatNao Legal Intelligence"
-description: "베트남 도로교통법, 노동법, 투자법 AI 검증 지식 아카이브 및 법률 가이드"
+description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam thời gian thực - Luật giao thông, lao động, đầu tư & doanh nghiệp FDI."
+lang: "vi"
 theme: jekyll-theme-cayman
+url: "https://luatnao-alt.github.io"
+baseurl: "/luatnao-legal-archive"
 google_analytics: ""
 show_downloads: false
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
