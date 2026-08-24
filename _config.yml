@@ -25,3 +25,5 @@ social:
   name: "LuatNao.vn"
   links:
     - "https://luatnao.vn"
+
+favicon: "/favicon.png"
