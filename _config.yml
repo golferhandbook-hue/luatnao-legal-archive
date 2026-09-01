@@ -1,9 +1,10 @@
-title: "⚖️ LuatNao Legal Intelligence"
-description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam thời gian thực - Luật giao thông, lao động, đầu tư & doanh nghiệp FDI."
+title: "B&B AI | LuatNao Legal Intelligence"
+description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam thời gian thực - B&B AI Engine."
 lang: "vi"
 theme: jekyll-theme-cayman
 url: "https://luatnao-alt.github.io"
-baseurl: "/luatnao-legal-archive"
+baseurl: ""
+favicon: "/favicon.png"
 google_analytics: ""
 show_downloads: false
 plugins:
