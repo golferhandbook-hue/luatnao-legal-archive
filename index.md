@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "B&B AI | Kho Kiến Thức & Tra Cứu Tri Thức Pháp Luật Việt Nam - LuatNao.vn"
-description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam thời gian thực. Hệ thống B&B AI phân tích và đối chiếu đa tầng Nghị định, Thông tư hiện hành."
+title: "Kho Kiến Thức & Tra Cứu Tri Thức Pháp Luật Việt Nam - LuatNao.vn"
+description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam thời gian thực. Hệ thống AI phân tích và đối chiếu đa tầng Nghị định, Thông tư hiện hành."
 ---
 
-<!-- ── 상단 커스텀 스타일 (B&B AI 테마 & 모던 페이지네이션) ── -->
+<!-- ── 상단 커스텀 스타일 (모던 페이지네이션 & 심플 텍스트 로고) ── -->
 <style>
   :root {
     --brand-primary: #2563eb;
@@ -279,7 +279,7 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
     text-decoration: underline;
   }
 
-  /* 📄 강력한 페이지네이션 (Pagination) 스타일 */
+  /* 📄 스마트 페이지네이션 (Pagination) 스타일 */
   .pagination-container {
     display: flex;
     justify-content: center;
@@ -367,12 +367,12 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
   }
 </style>
 
-<!-- ── 1. 상단 글로벌 네비게이션 헤더 (B&B AI 공식 로고 탑재) ── -->
+<!-- ── 1. 상단 글로벌 네비게이션 헤더 ── -->
 <nav class="archive-nav">
   <a href="https://luatnao-alt.github.io/" class="archive-brand">
-    <img src="assets/images/logo.png" alt="B&B AI Logo" class="archive-brand-logo" onerror="this.onerror=null; this.src='logo.png';" />
-    <span class="archive-brand-text">B&B AI</span>
-    <span class="archive-brand-badge">Legal & Quant</span>
+    <img src="assets/images/logo.png" alt="Logo" class="archive-brand-logo" onerror="this.onerror=null; this.src='logo.png';" />
+    <span class="archive-brand-text">LuatNao.vn</span>
+    <span class="archive-brand-badge">Archive</span>
   </a>
 
   <div class="archive-nav-links">
@@ -383,7 +383,7 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
   </div>
 
   <a href="https://luatnao.vn" target="_blank" rel="noopener" class="btn-launch-ai">
-    ⚡ Tra Cứu Tri Thức B&B AI →
+    ⚡ Tra Cứu Tri Thức LuatNao →
   </a>
 </nav>
 
@@ -406,7 +406,7 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
 
   <div class="search-count-bar">
     <span id="searchResultCount">Đang tải danh sách bài viết...</span>
-    <span>⚡ Cập nhật tự động thời gian thực từ B&B AI Engine</span>
+    <span>⚡ Cập nhật tự động thời gian thực từ AI Engine</span>
   </div>
 </div>
 
@@ -453,9 +453,9 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
   <div class="no-results-box" id="noResultsBox">
     <div style="font-size: 32px; margin-bottom: 8px;">🔍</div>
     <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 16px;">Không tìm thấy bài viết phù hợp</h4>
-    <p style="margin: 0 0 16px 0; color: #64748b; font-size: 13px;">일치하는 Q&A 게시글이 없습니다. B&B AI Engine에서 최신 법령 조항을 검색해 보세요!</p>
+    <p style="margin: 0 0 16px 0; color: #64748b; font-size: 13px;">일치하는 Q&A 게시글이 없습니다. LuatNao.vn에서 최신 법령 조항을 검색해 보세요!</p>
     <a href="https://luatnao.vn" target="_blank" rel="noopener" class="btn-launch-ai" style="display: inline-flex;">
-      ⚡ Tra Cứu Tại B&B AI
+      ⚡ Tra Cứu Tại LuatNao.vn
     </a>
   </div>
 </div>
@@ -468,23 +468,23 @@ description: "Kho lưu trữ & Tra cứu kiến thức pháp luật Việt Nam t
 <!-- ── 4. 하단 푸터 & 실시간 방문자 카운터 (Visitor Counter) ── -->
 <footer class="archive-footer">
   <div style="display: flex; align-items: center; gap: 10px;">
-    <img src="assets/images/logo.png" alt="B&B AI" style="width: 32px; height: 32px; object-fit: contain; border-radius: 8px; border: 1px solid rgba(56, 189, 248, 0.4);" onerror="this.onerror=null; this.src='logo.png';" />
-    <strong style="color: #ffffff; font-size: 16px; letter-spacing: -0.01em;">B&B AI Intelligence</strong>
+    <img src="assets/images/logo.png" alt="Logo" style="width: 32px; height: 32px; object-fit: contain; border-radius: 8px; border: 1px solid rgba(56, 189, 248, 0.4);" onerror="this.onerror=null; this.src='logo.png';" />
+    <strong style="color: #ffffff; font-size: 16px; letter-spacing: -0.01em;">LuatNao.vn Legal Intelligence</strong>
   </div>
 
   <p style="margin: 0; font-size: 12.5px; max-width: 540px; line-height: 1.6;">
-    Hệ thống lưu trữ và tra cứu kiến thức pháp luật & 퀀트 분석 Việt Nam tự động hóa. Cập nhật liên tục theo các Nghị định, Thông tư và dữ liệu mới nhất.
+    Hệ thống lưu trữ và tra cứu kiến thức pháp luật Việt Nam tự động hóa. Cập nhật liên tục theo các Nghị định, Thông tư và quy định mới nhất.
   </p>
 
   <!-- 실시간 방문자 카운터 위젯 배지 -->
   <div class="visitor-counter-bar">
-    <span style="font-size: 12.5px; color: #cbd5e1; font-weight: 700;">📊 B&B Views:</span>
+    <span style="font-size: 12.5px; color: #cbd5e1; font-weight: 700;">📊 LuatNao Views:</span>
     <img src="https://komarev.com/ghpvc/?username=luatnao-alt&label=TOTAL+VIEWS&color=2563eb&style=flat-square" alt="Total Pageviews" style="vertical-align: middle; border-radius: 4px;" />
     <img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fluatnao-alt.github.io&label=VISITORS&labelColor=%230f172a&countColor=%232563eb&style=flat-square" alt="Live Visitors" style="vertical-align: middle; border-radius: 4px;" />
   </div>
 
   <div style="font-size: 11.5px; color: #64748b; margin-top: 6px;">
-    © 2026 <strong><a href="https://luatnao.vn" target="_blank" rel="noopener" style="color: #38bdf8; text-decoration: none;">B&B AI</a></strong> | LuatNao.vn. All rights reserved. Powered by GitHub Pages & B&B AI Engine.
+    © 2026 <strong><a href="https://luatnao.vn" target="_blank" rel="noopener" style="color: #38bdf8; text-decoration: none;">LuatNao.vn</a></strong>. All rights reserved. Powered by GitHub Pages & Legal AI Engine.
   </div>
 </footer>
 
